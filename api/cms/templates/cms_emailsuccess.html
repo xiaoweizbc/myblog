@@ -1,0 +1,32 @@
+{% extends "cms_base.html" %}
+{% load static %}
+
+{% block titleblock %}
+    邮箱发送成功
+{% endblock titleblock %}
+
+{% block baseheadblock %}
+    <script src="{% static 'jquery/jquery-3.1.1.min.js' %}"></script>
+	<script>
+        var s = 10
+        setInterval(function(){
+            if(s>0){
+                $('#time').html(s);
+            }else{
+                window.location.href="/cms/settings/"
+            }
+            s--;
+        },1000)
+    </script>
+{% endblock baseheadblock %}
+
+{% block pageboxblock %}
+	<div class="alert alert-success">
+		<p>
+            邮件已发送！请于120秒内前往邮箱中激活链接
+        </p>
+        <p>
+            将于<span id="time">10</span>后返回<a href="/cms/settiongs/">上一页面</a>
+        </p>
+	</div>
+{% endblock pageboxblock %}
