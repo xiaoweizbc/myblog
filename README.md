@@ -40,7 +40,8 @@
 	文件cms_contextprocessor.py
 ###project details
 a.cms模板继承关系
-	cms_bootstrap.html(最底层的父模板，下面的都是继承它的)
+	comm_bootstrap.html(最底层的父模板，下面的都是继承它的)
+		cms_login.html
 		cms_base.html（网页上方导航栏nav标签）
 			cms_base_manage.html
 				cms_article_manage.html
@@ -53,7 +54,18 @@ a.cms模板继承关系
 			cms_email_success.html
 	cms_tag_templates.html（暂时没有继承任何父模板）
 附：cms注册页面暂时没做，要在Terminal中输入python2 manage.py shell来操作：
-```
+b.front模板继承关系
+	comm_bootstrap.html(最底层的父模板，下面的都是继承它的)
+		front_sign_base.html
+		front_base.html（网页上方导航栏nav标签）
+			front_article_detail.html
+			front_article_list.html(include front_artclelist_tpl.html)
+        front_forgetpwd.html
+        front_resetpwd.html
+        front_sign_base.html
+            front_signin.html
+            front_signup.html
+ `
 from django.contrib.auth.models import User  
 user = User.objects.create_user(username='***', email=None, password=None')  # 创建用户
 user.last_name = 'last_name'  # 修改用户信息

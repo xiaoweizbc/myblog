@@ -1,4 +1,12 @@
+/*
+
+
+
+
+*/
+
 'use strict';
+
 $(function() {
 	var url = window.location.href;
 	var ulTag = $('#sub-nav');

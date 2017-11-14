@@ -37,11 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',  #
     'api.cms',  #
-    'api.front',  #
     'api.common',  #
-    'frontauth',  #
+    'api.front',  #
     'article',  #
-    'cmsauth'  #
+    'cmsauth',  #
+    'frontauth',  #
 ]
 
 MIDDLEWARE = [

@@ -1,3 +1,10 @@
+/*
+
+
+
+
+*/
+
 'use strict';
 $(document).ready(function() {
 	//1. 获取当前的URL

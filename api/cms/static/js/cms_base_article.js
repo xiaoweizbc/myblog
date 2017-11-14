@@ -2,7 +2,7 @@
 // 初始化simditor的函数
 $(function() {
 	var editor,toolbar;
-	toolbar = ['title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale', 'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link', 'image', 'hr', '|', 'indent', 'outdent', 'alignment'];
+	toolbar = ['title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale', 'color', 'ol', 'ul', 'blockquote', 'code', 'table', 'link', 'image', 'hr', 'indent', 'outdent', 'alignment'];
 	Simditor.locale = 'zh-CN';
 	editor = new Simditor({
 		textarea: $('#simditor'),
@@ -11,6 +11,8 @@ $(function() {
 	});
 	// 加到window上去,其他地方才能访问到editor这个变量
 	window.editor = editor;
+	// simditor-icon
+	$("span").attr("class",名称);
 });
 
 //添加分類的函數

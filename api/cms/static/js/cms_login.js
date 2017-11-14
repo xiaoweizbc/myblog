@@ -1,4 +1,12 @@
+/*
+
+
+
+
+*/
+
 'use strict';
+
 $(function() {
 	$('.captcha-img').click(function() {
 		//ajax擅长处理纯文本和json对象

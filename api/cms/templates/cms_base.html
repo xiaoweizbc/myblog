@@ -4,6 +4,7 @@
 {% block headblock %}
 	<script src='{% static "js/cms_base.js" %}'></script>
 	<link rel="stylesheet" href="{% static 'css/cms_base.css' %}">
+    <link rel="shortcut icon" href='{% static "images/favicon_cms.ico" %}' />
 	{% block baseheadblock %}
 	{% endblock baseheadblock %}
 {% endblock headblock %}
@@ -18,12 +19,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{% url 'cms_index' %}">我的文章</a>
+                <a class="navbar-brand" href="{% url 'cms_index' %}">文章</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav menu-ul">
                     <li class="active"><a href="{% url 'cms_index' %}">管理</a></li>
-                    <li><a href="{% url 'cms_add_article' %}">添加文章</a></li>
+                    <li><a href="{% url 'cms_add_article' %}">添加</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">

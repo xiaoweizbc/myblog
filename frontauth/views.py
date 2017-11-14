@@ -13,10 +13,10 @@ def add_user(request):
     return HttpResponse('success')
 
 
-def test1(request):
+def test(request):
     # 从数据库中查找用户，然后密码也要相匹配
-    email = 'bbb@qq.com'
-    password = '234'
+    email = 'xiaoweizbc@163.com'
+    password = '123456'
     user = FrontUserModel.objects.filter(email=email).first()
     user.set_password('123')
     # if user.check_password(password):
@@ -26,24 +26,32 @@ def test1(request):
 
     return HttpResponse(u'success')
 
-
+# 登录
 def front_login(request):
-    email = 'bbb@qq.com'
-    password = '123'
+    email = 'xiaoweizbc@163.com'
+    password = '123456'
     user = login(request, email, password)
+    print user  # 登录成功：FrontUserModel object
+
     if user:
-        return HttpResponse(u'登录成功')
+        print user.email
+        print user.username
+        return HttpResponse(u'%s%s\n登录成功')
     else:
         return HttpResponse(u'登录失败')
 
-
+# 检测是否登录
 def check_login(request):
     uid = request.session.get(configs.LOGINED_KEY)
     user = FrontUserModel.objects.filter(pk=uid).first()
+    print user  #
     if user:
-        return HttpResponse(u'验证成功')
+        print "已登录用户信息如下："
+        print user.email
+        print user.username
+        return HttpResponse(u'验证成功\n已登录用户信息如下：\n%s%s'%(user.email, user.username))
     else:
-        return HttpResponse(u'验证失败')
+        return HttpResponse(u'验证失败\n没有用户登录')
 
 
 def front_logout(request):

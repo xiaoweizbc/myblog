@@ -207,4 +207,6 @@ def test(request):
     articleModel = ArticleModel.objects.all().first()
     articleDict = model_to_dict(articleModel)
     print articleDict
+    for (k, v) in articleDict.items():
+        print "dict[%s]=" % k, v
     return HttpResponse(articleDict)

@@ -1,4 +1,13 @@
+/*
+
+
+
+
+*/
+
 'use strict';
+
+
 // 监听编辑操作的函数
 $(function() {
 	var dialog = $("#category-modal");
